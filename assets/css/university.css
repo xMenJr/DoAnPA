@@ -65,9 +65,10 @@
     margin-top: 20px;
 }
 
-.find h6 {
-    line-height: 22px;
-    font-size: 14px;
+.folderA .list-unstyled li::before, .folderB .list-unstyled li::before {
+    content: "✓ ";
+    margin-right: 10px;
+    color: red;
 }
 
 table {
@@ -91,4 +92,30 @@ table th {
 
 tbody tr:nth-child(1) {
     background-color: #f2f2f2;
+}
+
+.content {
+    padding-left: 100px;
+}
+
+.folderA span, .folderB span, .folderC span {
+    display: inline-block;
+    background-color: #66cc33;
+    color: white;
+    padding: 10px 10px;
+    width: 100%;
+    font-weight: 700;
+    font-size: 1.3rem;
+}
+
+.folderB h5 {
+    padding: 10px 0;
+}
+
+.pt_a ul li {
+    padding: 5px 0;
+}
+
+.folderC {
+    padding-top: 20px;
 }
