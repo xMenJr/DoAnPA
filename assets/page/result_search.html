@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Bench Mark</title>
-    <link rel="stylesheet" href="/assets/css/benchmark.css">
+    <title>Result</title>
+    <link rel="stylesheet" href="/assets/css/result_search.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js" integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF" crossorigin="anonymous"></script>
@@ -48,19 +48,36 @@
         <div class="content">
             <div class="row d-flex">
                 <div class="col-md-8 left">
+                    <div class="row d-flex justify-content-center align-items-center mt-4">
+
+                        <div class="col-md-8">
+  
+                          <div class="search">
+                            <i class="fa fa-search"></i>
+                            <input type="text" class="form-control" placeholder="Nhập thông tin bạn cần tìm ...">
+                            <button class="btn btn-primary">Tìm kiếm</button>
+                          </div>
+                          
+                        </div>
+                        
+                      </div>
                     <div class="left-title" style="padding-left: 100px;">
-                        <h5 class="mb-4 py-3" style="font-size: 25px;">Điểm chuẩn <span id="NameUniversity">Đại Học Công Nghệ - Đại Học Quốc Gia Hà Nội</span></h5>
+                        <h5 class="mb-4 py-3" style="font-size: 30px;" id="nameUniversity">Đại học FPT</h5>
                     </div>
                     <div class="content">
                         <div class="folderA">
-                            <span>Điểm chuẩn trường <span class="NameUniversity" id="NameUniversity">Đại Học Công Nghệ - Đại Học Quốc Gia Hà Nội</span></span>
-                        </div>
-                        <div class="infor mb-3">
-                            <span style="font-size: 12px;">Tham khảo đầy đủ thông tin trường mã ngành của trường <span id="NameUniversity">Đại Học Công Nghệ - Đại Học Quốc Gia Hà Nội</span> để lấy thông tin chuẩn xác điền vào hồ sơ đăng ký vào ĐH.</span><br>
-                            <span style="font-size: 12px;">Điểm chuẩn của trường <span id="NameUniversity">Đại Học Công Nghệ - Đại Học Quốc Gia Hà Nội</span> như sau</span>
-                        </div>
-                        <div class="score" id="table-container">
-                            
+                            <span>A. GIỚI THIỆU</span>
+                            <ul class="list-unstyled" id="list-unstyled">
+                                <li class="p-2">Tên trường: Đại học FPT</li>
+                                <li class="p-2">Mã trường: FPT</li>
+                                <li class="p-2">Loại trường: Dân lập</li>
+                                <li class="p-2">Hệ đào tạo: Đại học</li>
+                                <li class="p-2">Địa chỉ: Khu Giáo dục và Đào tạo - Khu Công nghệ cao Hòa Lạc, Km29 Đại lộ Thăng Long, Thạch Thất, TP. Hà Nội</li>
+                                <li class="p-2">SĐT: 0247.3005.588</li>
+                                <li class="p-2">Email: daihocfpt@fpt.edu.vn</li>
+                                <li class="p-2">Website: https://hanoi.fpt.edu.vn/ </li>
+                                <li class="p-2">Facebook: www.facebook.com/DaihocFPTHaNoi</li>
+                            </ul>
                         </div>
                     </div>
                 </div>
@@ -110,6 +127,10 @@
     </footer>
 </body>
 <script>
-    GetInformationBenchMark();
+    GetInformationUniversity()
+    GetAdmissionsMethodsByIdUniversity()
+    GetOnlyDepartment()
+    GetDepartment()
+    GetPoint()
 </script>
 </html>

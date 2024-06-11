@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>News</title>
+    <link rel="stylesheet" href="/assets/css/home.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js" integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF" crossorigin="anonymous"></script>
+    <script src="../js/CallApi.js"></script>
+</head>
+<body>
+    <div class="container-fluid p-0">
+        <div class="header">
+            <div class="row align-items-center">
+                <div class="col-md-auto img-logo p-0 ms-5">
+                    <img src="../img/logo.png" style="width: 150px;" alt="Logo">
+                </div>
+                <div class="col p-0">
+                    <h3 class="text-center p-0">CỔNG THÔNG TIN TUYỂN SINH ĐẠI HỌC, CAO ĐẲNG LỚN NHẤT VIỆT NAM</h3>
+                </div>
+            </div>
+        </div>
+        <div class="navbar justify-content-center pb-0">
+            <div class="row">
+                <ul class="list-unstyled d-flex justify-content-center align-items-center w-100 text-white" style="font-weight: 500;">
+                    <li class="mx-4">
+                        <a class="text-decoration-none text-white" href="#">Trang chủ</a>
+                    </li>
+                    <li class="mx-4">
+                        <a class="text-decoration-none text-white" href="index.html">Đại học</a>
+                    </li>
+                    <li class="mx-4">Cao đẳng</li>
+                    <li class="mx-4">
+                        <a class="text-decoration-none text-white" href="major.html">Ngành nghề</a>
+                    </li>
+                    <li class="mx-4">Khối thi đại học</li>
+                    <li class="mx-4">
+                        <a class="text-decoration-none text-white" href="list_benchmark.html">Điểm chuẩn</a>
+                    </li>
+                    <li class="mx-4">
+                        <a class="text-decoration-none text-white" href="#">Bản tin</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class="search">
+            <div class="find_school text-center">
+                 <h4>TÌM TRƯỜNG ĐẠI HỌC ƯỚC MƠ CỦA BẠN</h4>
+            </div>
+            <div class="input-search text-center">
+                 <input type="" id="search" placeholder="Nhập trên trường bạn muốn tìm kiếm....">
+                 <button onclick="Search()">Tìm kiếm</button>
+            </div>
+         </div>
+        <div class="content">
+            <div class="row d-flex">
+                <div class="col-md-8 left">
+                    <div class="left-title d-flex">
+                        <!-- <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-file-earmark-text" viewBox="0 0 16 16">
+                            <path d="M5.5 7a.5.5 0 0 0 0 1h5a.5.5 0 0 0 0-1zM5 9.5a.5.5 0 0 1 .5-.5h5a.5.5 0 0 1 0 1h-5a.5.5 0 0 1-.5-.5m0 2a.5.5 0 0 1 .5-.5h2a.5.5 0 0 1 0 1h-2a.5.5 0 0 1-.5-.5"/>
+                            <path d="M9.5 0H4a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h8a2 2 0 0 0 2-2V4.5zm0 1v2A1.5 1.5 0 0 0 11 4.5h2V14a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1z"/>
+                          </svg> -->
+                        <h5>Góc sinh viên</h5>
+                    </div>
+                    <div class="left-infor">
+                        <a href="page404.html" class="infor-one d-flex mt-3 text-decoration-none text-dark">
+                            <div class="img me-3">
+                                <img style="width: 150px;" src="../img/n1.jpg" alt="">
+                            </div>
+                            <div class="title">
+                                <div class="title-big">
+                                    <b>Học sinh cuối cấp nên làm gì trong thời gian nghỉ Tết 2024?</b>
+                                </div>
+                                <div class="title-small">
+                                    <span >
+                                        Trong kỳ nghỉ Tết Nguyên đán 2024, học sinh lớp 12 có thể tranh thủ nghỉ ngơi, thư giãn, trước khi trở lại nhịp độ học tập đầy bận rộn và căng...
+                                    </span>
+                                </div>
+                            </div>
+                        </a>
+                        <a href="page404.html" class="infor-two d-flex mt-3 text-decoration-none text-dark">
+                            <div class="img me-3">
+                                <img style="width: 150px;" src="../img/n2.jpg" alt="">
+                            </div>
+                            <div class="title">
+                                <div class="title-big">
+                                    <b>Tìm hiểu mức thưởng Tết của giảng viên các trường ĐH hiện nay</b>
+                                </div>
+                                <div class="title-small">
+                                    <span>
+                                        Nhiều đại học chi thưởng Tết cho giảng viên dao động 10-50 triệu đồng, có trường Đại học thưởng Tết cho giảng viên 4 tháng thu nhập, dựa trên chất...
+                                    </span>
+                                </div>
+                            </div>
+                        </a>
+                        <a href="page404.html" class="infor-three d-flex mt-3 text-decoration-none text-dark">
+                            <div class="img me-3">
+                                <img style="width: 150px;" src="../img/n3.jpg" alt="">
+                            </div>
+                            <div class="title">
+                                <div class="title-big">
+                                    <b>Chuẩn đầu ra tiếng Anh của các trường Đại học hiện nay</b>
+                                </div>
+                                <div class="title-small">
+                                    <span>
+                                        Đầu ra Tiếng Anh là một trong những yêu cầu bắt buộc tại các trường ĐH hiện nay. Mỗi trường lại có chuẩn đầu ra Tiếng Anh khác, bạn có thể theo dõi...
+                                    </span>
+                                </div>
+                            </div>
+                        </a>
+                        <a href="page404.html" class="infor-four d-flex mt-3 text-decoration-none text-dark">
+                            <div class="img me-3">
+                                <img style="width: 150px;" src="../img/n4.jpg" alt="">
+                            </div>
+                            <div class="title">
+                                <div class="title-big">
+                                    <b>Làm thế nào để cai nghiện game?</b>
+                                </div>
+                                <div class="title-small">
+                                    <span>
+                                        Nghiện game là hiện tượng không hiếm gặp trong giới trẻ ngày nay. Vậy làm thế nào để cai nghiện game? Điều này có thể không khó như bạn...
+                                    </span>
+                                </div>
+                            </div>
+                        </a>
+                        <a href="page404.html" class="infor-five d-flex mt-3 text-decoration-none text-dark">
+                            <div class="img me-3">
+                                <img style="width: 150px;" src="../img/n5.jpg" alt="">
+                            </div>
+                            <div class="title">
+                                <div class="title-big">
+                                    <b>Sinh viên tốt nghiệp trường ĐH nào được doanh nghiệp ưu tiên tuyển dụng?c</b>
+                                </div>
+                                <div class="title-small">
+                                    <span>
+                                        Theo kết quả khảo sát của Đại học Quốc gia TP.HCM với các đơn vị sử dụng lao động tại 4 tỉnh, thành khu vực Đông Nam Bộ cho thấy các...
+                                </div>
+                            </div>
+                        </a>
+                        <a href="page404.html" class="infor-six d-flex mt-3 text-decoration-none text-dark">
+                            <div class="img me-3">
+                                <img style="width: 150px;" src="../img/n6.jpg" alt="">
+                            </div>
+                            <div class="title">
+                                <div class="title-big">
+                                    <b>Hàng nghìn sinh viên Sư phạm bị nợ tiền hỗ trợ</b>
+                                </div>
+                                <div class="title-small">
+                                    <span>
+                                        Ít nhất gần 4.000 sinh viên ở ba đại học sư phạm chưa nhận được hỗ trợ học phí, sinh hoạt phí nửa năm qua, với hơn 350 tỷ đồng, do vướng mắc về...
+                                    </span>
+                                </div>
+                            </div>
+                        </a>
+                        <a href="page404.html" class="infor-seven d-flex mt-3 text-decoration-none text-dark">
+                            <div class="img me-3">
+                                <img style="width: 150px;" src="../img/n7.jpg" alt="">
+                            </div>
+                            <div class="title">
+                                <div class="title-big">
+                                    <b>Những điều sinh viên cần nắm rõ về điểm rèn luyện ở bậc Đại học</b>
+                                </div>
+                                <div class="title-small">
+                                    <span>
+                                        Những điều sinh viên cần hiểu rõ về điểm rèn luyện để không làm ảnh hưởng tới kết quả học tập. 
+                                    </span>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+                <div class="col-md-4 right">
+                    <div class="right-title d-flex">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-chat-dots" viewBox="0 0 16 16">
+                            <path d="M5 8a1 1 0 1 1-2 0 1 1 0 0 1 2 0m4 0a1 1 0 1 1-2 0 1 1 0 0 1 2 0m3 1a1 1 0 1 0 0-2 1 1 0 0 0 0 2"/>
+                            <path d="m2.165 15.803.02-.004c1.83-.363 2.948-.842 3.468-1.105A9 9 0 0 0 8 15c4.418 0 8-3.134 8-7s-3.582-7-8-7-8 3.134-8 7c0 1.76.743 3.37 1.97 4.6a10.4 10.4 0 0 1-.524 2.318l-.003.011a11 11 0 0 1-.244.637c-.079.186.074.394.273.362a22 22 0 0 0 .693-.125m.8-3.108a1 1 0 0 0-.287-.801C1.618 10.83 1 9.468 1 8c0-3.192 3.004-6 7-6s7 2.808 7 6-3.004 6-7 6a8 8 0 0 1-2.088-.272 1 1 0 0 0-.711.074c-.387.196-1.24.57-2.634.893a11 11 0 0 0 .398-2"/>
+                        </svg>
+                        <h5>Thông tin cần biết</h5>
+                    </div>
+                    <div class="row right-content">
+                        <ul class="list-unstyled">
+                            <li><a href="" class="text-decoration-none text-white">
+                                <h6>Đại học Công nghệ Đông Á giảm học phí 10%</h6>
+                            </a></li>
+                            <li><a href="" class="text-decoration-none text-white">
+                                <h6>Đại học Công nghệ Đông Á - Top 1 Trịnh Văn Bô</h6>
+                            </a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <footer class="footer mt-4">
+        <div class="footer-container">
+            <div class="footer-section about">
+                <h2>Về chúng tôi</h2>
+                <p>Chúng tôi cung cấp thông tin chính xác và cập nhật nhất về tuyển sinh đại học.</p>
+            </div>
+            <div class="footer-section links">
+                <h2>Liên kết nhanh</h2>
+                <ul>
+                    <li><a href="./home.html">Trang chủ</a></li>
+                    <li><a href="./index.html">Đại học</a></li>
+                    <li><a href="./major.html">Ngành nghề</a></li>
+                    <li><a href="./benchmark.html">Điểm chuẩn</a></li>
+                </ul>
+            </div>
+            <div class="footer-section contact">
+                <h2>Liên hệ với chúng tôi</h2>
+                <p>Email: info@universityadmissions.com</p>
+                <p>Số điện thoại: +123 456 7890</p>
+            </div>
+        </div>
+    </footer>
+</body>
+<script>
+    GetInformationUniversity()
+    GetAdmissionsMethodsByIdUniversity()
+    GetOnlyDepartment()
+    GetDepartment()
+    GetPoint()
+</script>
+</html>

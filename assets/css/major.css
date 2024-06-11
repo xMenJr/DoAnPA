@@ -29,6 +29,13 @@
     background-size: cover;
 }
 
+.search {
+    background-image: url('../img/banner.jpg');
+    height: 350px;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
 .find_school h4 {
     color: #fff;
     font-size: 32px;
@@ -37,13 +44,6 @@
     padding-top: 50px;
     margin-bottom: 30px;
     text-shadow: 1px 1px 1px #333;
-}
-
-.search {
-    background-image: url('../img/banner.jpg');
-    height: 350px;
-    background-repeat: no-repeat;
-    background-size: cover;
 }
 
 .input-search {
