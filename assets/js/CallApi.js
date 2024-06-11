@@ -370,3 +370,123 @@ async function GetDataArea() {
         table.appendChild(tbody);
         document.getElementById('score').appendChild(table);
 }
+
+
+async function SearchUniversityBenchmark() {
+    let response = await fetch(`http://localhost:5086/api/University`);
+    let data = await response.json();
+    const table = document.createElement('table');
+        const tbody = document.createElement('tbody');
+
+        // Tạo hàng tiêu đề
+        const headerRow = document.createElement('tr');
+        const headers = ['STT', 'Mã trường', 'Tên trường'];
+        headers.forEach(headerText => {
+            const th = document.createElement('td');
+            th.textContent = headerText;
+            headerRow.appendChild(th);
+        });
+        tbody.appendChild(headerRow);
+
+        data.result.forEach((university, index) => {
+            const row = document.createElement('tr');
+    
+            // Tạo ô số thứ tự
+            const tdIndex = document.createElement('td');
+            tdIndex.textContent = index + 1;
+            row.appendChild(tdIndex);
+    
+            // Tạo ô mã trường
+            const tdCode = document.createElement('td');
+            tdCode.textContent = university.code;
+            row.appendChild(tdCode);
+    
+            // Tạo ô tên trường và bọc trong thẻ a
+            const tdName = document.createElement('td');
+            const a = document.createElement('a');
+            a.href = `./university.html?id=${university.id}`;  // Thay đổi URL theo nhu cầu của bạn
+            a.textContent = university.name;
+            a.classList.add('text-decoration-none', 'fw-bold'); // Thêm các lớp CSS
+            a.style.color = "#003B73"
+            a.onclick = (event) => {
+                event.preventDefault(); // Ngăn chặn hành động mặc định của thẻ a
+                InformationBenchMark(university.id, university.name);
+            };
+            tdName.appendChild(a);
+            row.appendChild(tdName);
+    
+            tbody.appendChild(row);
+        });
+
+        // Thêm tbody vào bảng
+        table.appendChild(tbody);
+        document.getElementById('table-container').appendChild(table);
+}
+
+function InformationBenchMark(idUniversity, Name) {
+    window.location.href = `./benchmark.html?id=${idUniversity}&name=${Name}`;
+}
+
+async function GetInformationBenchMark() {
+
+    const NameUniversity = document.querySelectorAll("#NameUniversity")
+    
+    const currentDate = new Date();
+    const currentYear = currentDate.getFullYear();
+    const oldYear = currentYear - 1
+
+    const urlParams = new URLSearchParams(window.location.search.substring(1));
+    const IdUniversity =  urlParams.get('id');
+    const name  = urlParams.get("name")
+
+    NameUniversity.forEach(element => {
+        element.innerText = name
+    });
+    
+
+    
+    let response = await fetch(`http://localhost:5086/api/Benchmark/Display?IdUniversity=${IdUniversity}&Year=${currentYear}`);
+    let data = await response.json();
+
+    const table = document.createElement('table');
+    const tbody = document.createElement('tbody');
+
+    // Tạo hàng tiêu đề
+    const headerRow = document.createElement('tr');
+    const headers = ['STT', 'Ngành', 'Điểm ' + oldYear, 'Điểm ' + currentYear];
+    headers.forEach(headerText => {
+        const th = document.createElement('td');
+        th.textContent = headerText;
+        headerRow.appendChild(th);
+    });
+    tbody.appendChild(headerRow);
+
+    data.result.forEach((university, index) => {
+        const row = document.createElement('tr');
+
+        // Tạo ô số thứ tự
+        const tdIndex = document.createElement('td');
+        tdIndex.textContent = index + 1;
+        row.appendChild(tdIndex);
+
+        // Tạo ô mã trường
+        const tdName = document.createElement('td');
+        tdName.textContent = university.departments;
+        row.appendChild(tdName);
+
+        const tdCode = document.createElement('td');
+        tdCode.textContent = university.point1;
+        row.appendChild(tdCode);
+
+        const tdPrice = document.createElement('td');
+        tdPrice.textContent = university.point2;
+        row.appendChild(tdPrice);
+
+        tbody.appendChild(row);
+    });
+
+    // Thêm tbody vào bảng
+    table.appendChild(tbody);
+    document.getElementById('table-container').appendChild(table);
+}
+
