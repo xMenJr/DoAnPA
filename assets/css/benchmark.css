@@ -107,3 +107,8 @@ tbody tr:nth-child(1) {
     font-weight: 700;
     font-size: 1.3rem;
 }
+
+.NameUniversity {
+    display: contents !important;
+    padding: 10px 10px 10px 0 !important;
+}

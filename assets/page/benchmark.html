@@ -8,6 +8,7 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js" integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF" crossorigin="anonymous"></script>
+    <script src="../js/CallApi.js"></script>
 </head>
 <body>
     <div class="container-fluid p-0">
@@ -41,39 +42,18 @@
             <div class="row d-flex">
                 <div class="col-md-8 left">
                     <div class="left-title" style="padding-left: 100px;">
-                        <h5 class="mb-4 py-3" style="font-size: 25px;">Điểm chuẩn Đại Học Công Nghệ - Đại Học Quốc Gia Hà Nội</h5>
+                        <h5 class="mb-4 py-3" style="font-size: 25px;">Điểm chuẩn <span id="NameUniversity">Đại Học Công Nghệ - Đại Học Quốc Gia Hà Nội</span></h5>
                     </div>
                     <div class="content">
                         <div class="folderA">
-                            <span>Điểm chuẩn trường Đại Học Công Nghệ - Đại Học Quốc Gia Hà Nội</span>
+                            <span>Điểm chuẩn trường <span class="NameUniversity" id="NameUniversity">Đại Học Công Nghệ - Đại Học Quốc Gia Hà Nội</span></span>
                         </div>
                         <div class="infor mb-3">
-                            <span style="font-size: 12px;">Tham khảo đầy đủ thông tin trường mã ngành của trường Đại Học Công Nghệ - Đại Học Quốc Gia Hà Nội để lấy thông tin chuẩn xác điền vào hồ sơ đăng ký vào ĐH.</span><br>
-                            <span style="font-size: 12px;">Điểm chuẩn của trường Đại học Công nghệ - Đại học Quốc gia Hà Nội như sau</span>
+                            <span style="font-size: 12px;">Tham khảo đầy đủ thông tin trường mã ngành của trường <span id="NameUniversity">Đại Học Công Nghệ - Đại Học Quốc Gia Hà Nội</span> để lấy thông tin chuẩn xác điền vào hồ sơ đăng ký vào ĐH.</span><br>
+                            <span style="font-size: 12px;">Điểm chuẩn của trường <span id="NameUniversity">Đại Học Công Nghệ - Đại Học Quốc Gia Hà Nội</span> như sau</span>
                         </div>
-                        <div class="score">
-                            <table>
-                                <tbody>
-                                    <tr>
-                                        <td>Mã xét tuyển</td>
-                                        <td>Tên ngành/Chương trình đào tạo</td>
-                                        <td>Năm 2023</td>
-                                        <td>Năm 2024</td>
-                                    </tr>
-                                    <tr>
-                                        <td>CN1</td>
-                                        <td>Công nghệ thông tin</td>
-                                        <td>19.4</td>
-                                        <td>22.1</td>
-                                    </tr>
-                                    <tr>
-                                        <td>CN2</td>
-                                        <td>Trí tuệ nhân tạo</td>
-                                        <td>20.4</td>
-                                        <td>22.8</td>
-                                    </tr>
-                                </tbody>
-                            </table>
+                        <div class="score" id="table-container">
+                            
                         </div>
                     </div>
                 </div>
@@ -100,4 +80,7 @@
         </div>
     </div>
 </body>
+<script>
+    GetInformationBenchMark();
+</script>
 </html>
