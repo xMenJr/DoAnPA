@@ -5,8 +5,14 @@
 }
 
 .navbar {
-    background-color: antiquewhite;
+    background-color: #1B387C;
     height: 60px;
+}
+
+.header {
+    background-image: url('../img/bg_header.png');
+    background-repeat: no-repeat;
+    background-size: cover;
 }
 
 .navbar ul {
