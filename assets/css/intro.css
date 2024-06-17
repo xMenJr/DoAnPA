@@ -224,24 +224,3 @@ tbody tr:nth-child(1) {
 .footer-section ul li a:hover {
     color: #ff6347;
 }
-
-.search_university {
-    color: white;
-    background-color: #1B387C;
-}
-
-
-.s1 button{
-
-    position: absolute;
-    top: 5px;
-    right: 5px;
-    height: 50px;
-    width: 110px;
-    background: #1B387C;
-
-   }
-
-   .s1 button:hover {
-    background-color: #4965a7;
-   }
