@@ -4,7 +4,7 @@ async function GetArea() {
     let data = await response.json();
     data.result.forEach((element, index) => {
         let div = document.createElement('div');
-        div.innerHTML = `<a class="text-decoration-none text-dark" id="${element.id}" onClick="DirectArea('${element.id}', '${element.name}')">${element.name}</a>`;
+        div.innerHTML = `<a style="cursor:pointer" class="text-decoration-none  text-dark" id="${element.id}" onClick="DirectArea('${element.id}', '${element.name}')">${element.name}</a>`;
         khuvuc.appendChild(div);
     });
     
@@ -32,9 +32,63 @@ async function SearchUniversity() {
 
     const urlParams = new URLSearchParams(window.location.search.substring(1));
     const search =  urlParams.get('search');
+    const department =  urlParams.get('name');
 
+    if(search == null) {
+        let response = await fetch(`http://localhost:5086/api/University/SearchUniversityMajor?search=${department}`);
+    let data = await response.json();
+
+    find.innerHTML = `<h6>Tìm thấy <b>${data.totalRecords}</b> trường với ngành nghề <b>${department}</b></h6>`;
+
+    const table = document.createElement('table');
+        const tbody = document.createElement('tbody');
+
+        // Tạo hàng tiêu đề
+        const headerRow = document.createElement('tr');
+        const headers = ['STT', 'Mã trường', 'Tên trường'];
+        headers.forEach(headerText => {
+            const th = document.createElement('td');
+            th.textContent = headerText;
+            headerRow.appendChild(th);
+        });
+        tbody.appendChild(headerRow);
+
+        data.result.forEach((university, index) => {
+            const row = document.createElement('tr');
     
-    let response = await fetch(`http://localhost:5086/api/University/SearchUniversity?search=${search}`);
+            // Tạo ô số thứ tự
+            const tdIndex = document.createElement('td');
+            tdIndex.textContent = index + 1;
+            row.appendChild(tdIndex);
+    
+            // Tạo ô mã trường
+            const tdCode = document.createElement('td');
+            tdCode.textContent = university.code;
+            row.appendChild(tdCode);
+    
+            // Tạo ô tên trường và bọc trong thẻ a
+            const tdName = document.createElement('td');
+            const a = document.createElement('a');
+            a.href = `./university.html?id=${university.id}`;  // Thay đổi URL theo nhu cầu của bạn
+            a.textContent = university.name;
+            a.classList.add('text-decoration-none', 'fw-bold'); // Thêm các lớp CSS
+            a.style.color = "#003B73"
+            a.onclick = (event) => {
+                event.preventDefault(); // Ngăn chặn hành động mặc định của thẻ a
+                InformationUniversity(university.id);
+            };
+            tdName.appendChild(a);
+            row.appendChild(tdName);
+    
+            tbody.appendChild(row);
+        });
+
+        // Thêm tbody vào bảng
+        table.appendChild(tbody);
+        document.getElementById('table-container').appendChild(table);
+    }
+    else {
+        let response = await fetch(`http://localhost:5086/api/University/SearchUniversity?search=${search}`);
     let data = await response.json();
 
     find.innerHTML = `<h6>Tìm thấy <b>${data.totalRecords}</b> trường với từ khóa <b>${search}</b></h6>`;
@@ -85,6 +139,8 @@ async function SearchUniversity() {
         // Thêm tbody vào bảng
         table.appendChild(tbody);
         document.getElementById('table-container').appendChild(table);
+    }
+    
 }
 
 function InformationUniversity(id) {
@@ -490,3 +546,32 @@ async function GetInformationBenchMark() {
     document.getElementById('table-container').appendChild(table);
 }
 
+
+async function GetAllDepartmentMajor() {
+    const conglap = document.getElementById('conglap');
+    let response = await fetch(`http://localhost:5086/api/Departments/GetAllDepartmentMajor`);
+    let data = await response.json();
+    data.result.forEach(department => {
+        conglap.innerHTML += `
+            <div>
+                <a class="text-decoration-none text-dark" onClick="DirectMajorDepartment('${department}')">${department}</a>
+            </div>
+        `
+    });
+}
+
+function DirectMajorDepartment(name) {
+    window.location.href = `./search.html?name=${name}`;
+}
+
+
+async function SearchUniversityMajor() {
+
+    const find = document.getElementById('find');
+
+    const urlParams = new URLSearchParams(window.location.search.substring(1));
+    const search =  urlParams.get('name');
+
+    
+    
+}
