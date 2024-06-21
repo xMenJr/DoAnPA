@@ -3,3 +3,7 @@ function Search() {
     window.location.href = `./search.html?search=${search}`;
 }
 
+
+
+
+
